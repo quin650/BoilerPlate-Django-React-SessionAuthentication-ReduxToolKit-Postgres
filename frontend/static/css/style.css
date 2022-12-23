@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+    scroll-snap-type: y mandatory
+}
+
+body {
+    margin: 0;
+    background-color: #020307;
+}

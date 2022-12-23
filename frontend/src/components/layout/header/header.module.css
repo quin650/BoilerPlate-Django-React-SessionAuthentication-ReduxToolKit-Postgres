@@ -1,0 +1,301 @@
+.nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 300;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    width: 100%;
+    background-color: rgb(0, 0, 0, .4);
+}
+
+.nav_container {
+    display: flex;
+    color: rgb(179, 179, 179);
+    height: 3rem;
+    width: 99%;
+    max-width: 1350px;
+    align-items: center;
+    background-color: transparent;
+}
+
+.Logo {
+    height: 3rem;
+    width: 3rem;
+    justify-content: flex-start;
+    margin-right: .5rem;
+}
+
+.Logo:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
+    animation: around .18s ease-in forwards;
+}
+
+/*========== Animation ==========*/
+@keyframes around {
+    0% {
+        transform: rotate(22.5deg);
+    }
+
+    33% {
+        transform: rotate(45deg);
+    }
+
+    66% {
+        transform: rotate(67.5deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+.company {
+    justify-content: flex-start;
+    margin-right: 1rem;
+    font-weight: bold;
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.company:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.company:active {
+    color: black;
+}
+
+.software {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    justify-content: flex-start;
+}
+
+.software:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.software:active {
+    color: black;
+}
+
+
+.explore {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    justify-content: flex-start;
+}
+
+
+.explore:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.explore:active {
+    color: black;
+}
+
+
+.spacer {
+    width: 50%;
+}
+
+.search input {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    border-radius: 7px;
+    height: 2.2rem;
+    width: 16rem;
+    opacity: .2;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-size: 14px;
+    opacity: .3;
+    background-color: rgba(0, 0, 0, 0.04);
+    border: .1px solid white;
+    outline: 0px solid white;
+    justify-content: flex-end;
+}
+
+.search input:focus {
+    outline: 1px solid white;
+    border: 1px solid white;
+    opacity: 1;
+    color: black;
+    background-color: white;
+}
+
+.search input:hover {
+    outline: 1px solid white;
+    border: 1px solid white;
+    opacity: 1;
+}
+
+.search input:hover::placeholder {
+    cursor: text;
+    caret-color: white;
+    color: white;
+}
+
+.search input:focus::placeholder {
+    color: rgb(88, 88, 88);
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.sign_in {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    min-width: 3.3rem;
+    justify-content: flex-end;
+}
+
+.sign_in:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.sign_in:active {
+    color: black;
+}
+
+
+.sign_in:hover {
+    cursor: pointer;
+}
+
+.sign_up {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    border-radius: 6px;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-size: 1rem;
+    height: 2.2rem;
+    width: 5rem;
+    min-width: 5rem;
+    background: rgba(0, 0, 0, 0.04);
+    color: white;
+    border: .5px solid white;
+    justify-content: flex-end;
+}
+
+
+.sign_up:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.sign_up:hover {
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburgerMaster {
+    display: none;
+}
+
+.avatar {
+    height: 2.2rem;
+    width: 2.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+/*========== Media Queries ==========*/
+
+/* Devices under 1011px */
+@media (max-width: 1011px) {
+    .sign_up {
+        order: 1;
+        margin: auto auto auto 2rem;
+        padding-top: .3rem;
+        padding-bottom: .3rem;
+        font-size: .8rem;
+        height: 1.76rem;
+        width: 4rem;
+        min-width: 4rem;
+    }
+
+    .Logo {
+        order: 2;
+        margin: auto;
+    }
+
+    .hamburgerMaster {
+        display: block;
+        order: 3;
+        width: 80px;
+        margin: auto 2rem auto auto;
+        padding-left: 55px;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: white;
+        margin: 5px 0;
+    }
+
+    /*========== Media Queries ===Not Used===*/
+    .avatar {
+        display: none;
+    }
+
+    .company {
+        display: none;
+    }
+
+    .software {
+        display: none;
+    }
+
+    .explore {
+        display: none;
+    }
+
+    .spacer {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .search input {
+        display: none;
+    }
+
+    ::placeholder {
+        display: none;
+    }
+
+    .sign_in {
+        display: none;
+    }
+
+}
