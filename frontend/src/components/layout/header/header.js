@@ -3,7 +3,6 @@ import classes from './header.module.css';
 import Logo from '../../static/images/1Logo.png';
 import Avatar from '../../static/images/Avatar.png';
 
-
 const Header = () => {
     const [auth, SetAuth] = useState(false);
     return (
@@ -19,7 +18,7 @@ const Header = () => {
                 </div>
                 <div className={classes.sign_in}>Sign-In</div>
                 <button className={classes.sign_up}>Sign-Up</button>
-                <div className={classes.hamburgerMaster}>w
+                <div className={classes.hamburgerMaster}>
                     <div className={classes.hamburger}></div>
                     <div className={classes.hamburger}></div>
                     <div className={classes.hamburger}></div>
