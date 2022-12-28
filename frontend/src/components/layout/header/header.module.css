@@ -1,3 +1,4 @@
+
 .nav {
     display: flex;
     position: fixed;
@@ -14,7 +15,7 @@
 
 .nav_container {
     display: flex;
-    color: rgb(179, 179, 179);
+    color: var(--white);
     height: 3rem;
     width: 99%;
     max-width: 1350px;
@@ -62,11 +63,11 @@
     margin-left: .5rem;
     margin-right: .5rem;
     text-decoration: none;
-    color: rgb(179, 179, 179);
+    color: var(--white);
 }
 
 .company:hover {
-    color: white;
+    color: var(--gray);
     cursor: pointer;
 }
 
@@ -79,11 +80,11 @@
     margin-right: .5rem;
     justify-content: flex-start;
     text-decoration: none;
-    color: rgb(179, 179, 179);
+    color: var(--white);
 }
 
 .software:hover {
-    color: white;
+    color: var(--gray);
     cursor: pointer;
 }
 
@@ -96,11 +97,11 @@
     margin-right: .5rem;
     justify-content: flex-start;
     text-decoration: none;
-    color: rgb(179, 179, 179);
+    color: var(--white);
 }
 
 .explore:hover {
-    color: white;
+    color: var(--gray);
     cursor: pointer;
 }
 
@@ -166,11 +167,11 @@
     min-width: 3.3rem;
     justify-content: flex-end;
     text-decoration: none;
-    color: rgb(179, 179, 179);
+    color: var(--white);
 }
 
 .sign_in:hover {
-    color: white;
+    color: var(--gray);
     cursor: pointer;
 }
 
@@ -198,18 +199,18 @@
     border: .5px solid white;
     justify-content: flex-end;
     text-decoration: none;
-    color: rgb(179, 179, 179);
+    color: var(--white);
 }
 
 .sign_up:hover {
-    color: black;
-    background-color: white;
+    color: var(--gray);
+    background-color:  var(--white);
     outline: .5;
     cursor: pointer;
 }
 
 .sign_up:active {
-    color: rgb(179, 179, 179);
+    color: black;
 }
 
 .hamburger {

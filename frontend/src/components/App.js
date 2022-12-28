@@ -15,7 +15,9 @@ function App() {
 
     return (
         <Fragment > 
-            <Header />
+            <header>
+                <Header />
+            </header>
             <main>
                 <Switch>
                     <Route path='/' exact>
