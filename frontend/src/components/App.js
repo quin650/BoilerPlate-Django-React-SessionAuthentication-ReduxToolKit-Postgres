@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import Header from './layout/header/header';
+import MainNavbar from './layout/header/mainNavbar';
 import Footer from './layout/footer/footer';
-import Home from './pages/Home';
+import Home from './pages/home';
 import Software from './software/Software';
 import Explore from './pages/explore/Explore';
-import Register from './pages/Register';
-import Login from './pages/Login';
+import Register from './pages/register';
+import Login from './pages/login';
 
 function App() {
     useEffect(() => {
@@ -16,7 +16,7 @@ function App() {
     return (
         <Fragment > 
             <header>
-                <Header />
+                <MainNavbar />
             </header>
             <main>
                 <Switch>
