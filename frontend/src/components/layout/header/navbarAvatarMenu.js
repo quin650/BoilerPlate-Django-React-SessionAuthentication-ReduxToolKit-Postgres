@@ -1,9 +1,9 @@
 import React from 'react';
 import defaultPNG from '../../static/images/1Avatar.png';
-import classes from './avatar.module.css';
+import classes from './navbarAvatarMenu.module.css';
 
 
-const Avatar = () => {
+const NavbarAvatarMenu = () => {
     
     return (
         <div>
@@ -12,5 +12,5 @@ const Avatar = () => {
     );
 };
 
-export default Avatar;
+export default NavbarAvatarMenu;
 
