@@ -35,6 +35,7 @@
     animation: around .18s ease-in forwards;
 }
 
+
 /*========== Animation ==========*/
 @keyframes around {
     0% {
@@ -54,12 +55,14 @@
     }
 }
 
-.company {
+.company{
     justify-content: flex-start;
     margin-right: 1rem;
     font-weight: bold;
     margin-left: .5rem;
     margin-right: .5rem;
+    text-decoration: none;
+    color: rgb(179, 179, 179);
 }
 
 .company:hover {
@@ -75,6 +78,8 @@
     margin-left: .5rem;
     margin-right: .5rem;
     justify-content: flex-start;
+    text-decoration: none;
+    color: rgb(179, 179, 179);
 }
 
 .software:hover {
@@ -86,13 +91,13 @@
     color: black;
 }
 
-
 .explore {
     margin-left: .5rem;
     margin-right: .5rem;
     justify-content: flex-start;
+    text-decoration: none;
+    color: rgb(179, 179, 179);
 }
-
 
 .explore:hover {
     color: white;
@@ -102,7 +107,6 @@
 .explore:active {
     color: black;
 }
-
 
 .spacer {
     width: 50%;
@@ -161,6 +165,8 @@
     margin-right: .5rem;
     min-width: 3.3rem;
     justify-content: flex-end;
+    text-decoration: none;
+    color: rgb(179, 179, 179);
 }
 
 .sign_in:hover {
@@ -172,7 +178,6 @@
     color: black;
 }
 
-
 .sign_in:hover {
     cursor: pointer;
 }
@@ -183,6 +188,7 @@
     border-radius: 6px;
     padding-top: .5rem;
     padding-bottom: .5rem;
+    padding-left: .65rem;
     font-size: 1rem;
     height: 2.2rem;
     width: 5rem;
@@ -191,17 +197,19 @@
     color: white;
     border: .5px solid white;
     justify-content: flex-end;
+    text-decoration: none;
+    color: rgb(179, 179, 179);
 }
-
 
 .sign_up:hover {
     color: black;
     background-color: white;
+    outline: .5;
     cursor: pointer;
 }
 
-.sign_up:hover {
-    cursor: pointer;
+.sign_up:active {
+    color: rgb(179, 179, 179);
 }
 
 .hamburger {
@@ -233,6 +241,7 @@
         margin: auto auto auto 2rem;
         padding-top: .3rem;
         padding-bottom: .3rem;
+        padding-left: .55rem;
         font-size: .8rem;
         height: 1.76rem;
         width: 4rem;

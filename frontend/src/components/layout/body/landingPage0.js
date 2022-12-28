@@ -13,7 +13,7 @@ const LandingPage0 = () => {
                 <h3> -Leonardo da Vinci</h3>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default LandingPage0;
