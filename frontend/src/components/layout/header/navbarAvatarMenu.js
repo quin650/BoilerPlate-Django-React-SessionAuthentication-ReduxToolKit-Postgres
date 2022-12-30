@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultPNG from '../../static/images/1Avatar.png';
+import defaultPNG from '../../../../static/images/1Avatar.png';
 import classes from './navbarAvatarMenu.module.css';
 
 

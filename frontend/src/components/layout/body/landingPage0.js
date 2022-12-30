@@ -1,7 +1,6 @@
 import React from "react";
 import classes from './landingPage0.module.css';
-
-import Landing_Image from '../../static/images/book_background_dark.png';
+import Landing_Image from '../../../../static/images/book_background_dark.png';
 
 const LandingPage0 = () => {
 

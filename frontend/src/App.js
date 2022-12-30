@@ -1,12 +1,14 @@
 import React, { Fragment, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import MainNavbar from './layout/header/mainNavbar';
-import Footer from './layout/footer/footer';
-import Home from './pages/home';
-import Software from './software/Software';
-import Explore from './pages/explore/Explore';
-import Register from './pages/register';
-import Login from './pages/login';
+import MainNavbar from './components/layout/header/mainNavbar';
+import Footer from './components/layout/footer/footer';
+import Home from './components/pages/home';
+import Software from './components/software/Software';
+import Explore from './components/pages/explore/Explore';
+import Register from './components/pages/register';
+import Login from './components/pages/login';
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
     useEffect(() => {
@@ -14,7 +16,7 @@ function App() {
     }, []);
 
     return (
-        <Fragment > 
+        <Provider store={store}>
             <header>
                 <MainNavbar />
             </header>
@@ -43,7 +45,7 @@ function App() {
             <footer>
                 <Footer />
             </footer>
-        </Fragment>
+        </Provider>
     );
 };
 

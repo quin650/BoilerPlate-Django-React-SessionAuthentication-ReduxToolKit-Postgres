@@ -11,6 +11,12 @@ html {
 
 body {
     margin: 0;
-    background-color: #020307;
+    background-color: black;
+    overscroll-behavior-y: none;
 }
 
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --gray: #b3b3b3;
+}
