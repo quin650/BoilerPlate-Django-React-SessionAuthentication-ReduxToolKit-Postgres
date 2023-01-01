@@ -11,7 +11,7 @@ html {
 
 body {
     margin: 0;
-    background-color: black;
+    background-color: var(--black);
     overscroll-behavior-y: none;
 }
 
@@ -19,4 +19,5 @@ body {
     --blue: #1e90ff;
     --white: #ffffff;
     --gray: #b3b3b3;
+    --black:  #020307;
 }

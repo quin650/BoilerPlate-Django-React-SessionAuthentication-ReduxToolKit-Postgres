@@ -3,23 +3,25 @@
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
+    margin: 0;
+    padding: 0;
+    /*Dark-Mode Difference */
+    background-color: var(--black);
+    padding: 130px 0;
+    scroll-snap-align: center;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    resize: both;
+    overflow: hidden;
 }
 
+
 .main img {
-    display: flex;
     position: relative;
     top: 0;
     align-items: center;
-    margin: 0;
-    /* min-height: 1000px;
-    min-width: 1000px; */
-    /* height: auto;
-    width: auto; */
-    height: 100vh;
-    width: auto;
-    /* 
-    max-height: 100vh;
-    max-width: 1728px; */
+
 }
 
 .caption {
@@ -30,6 +32,8 @@
     max-width: 1728px;
     margin-left: 8%;
     margin-right: 2%;
+    width:80%;
+
 }
 
 .caption h1 {
@@ -60,7 +64,7 @@
     }
 }
 
-/*========== Media Queries ==========*/
+/*========== Media Queries --WIDTH ==========*/
 
 /* Devices under 1550px */
 @media (max-width: 1550px) {
@@ -68,17 +72,14 @@
         scroll-snap-align: start;
     }
 
+    /* makes it for a smoother transition because of caption moving expanding or squishing during window width change*/
     .caption {
-        margin-left: 8%;
+        margin-left: 8%; 
     }
 }
 
-/* Devices under 1011px */
+/* Width under 1011px */
 @media (max-width: 1011px) {
-    .caption {
-        margin-top: 39px;
-    }
-
     .caption h1 {
         font-size: 3.7rem;
         letter-spacing: .15rem;
@@ -92,8 +93,22 @@
     }
 }
 
-@media (max-height: 300px) {
+/* Width under 1011px */
+@media (max-width: 1011px) {
     .caption {
-        top: 74px;
+        margin-top: 50px;
+    }
+}
+/* Width over 1011px */
+@media (min-width: 1011px) {
+    .caption {
+        margin-top: 10px;
+    }
+}
+
+/* Width over 1550px */
+@media (min-width: 1550px) {
+    .caption {
+        margin-top: 15px;
     }
 }

@@ -12,6 +12,8 @@ const initialState = {
     city: '',
 };
 
+
+// REDUCER REDUCER REDUCER REDUCER
 export default function(state = initialState, action) {
     const { type, payload } = action;
 

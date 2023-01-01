@@ -55,24 +55,6 @@
     }
 }
 
-.company{
-    justify-content: flex-start;
-    margin-right: 1rem;
-    margin-left: .5rem;
-    margin-right: .5rem;
-    text-decoration: none;
-    color: var(--white);
-}
-
-.company:hover {
-    color: var(--gray);
-    cursor: pointer;
-}
-
-.company:active {
-    color: black;
-}
-
 .software {
     margin-left: .5rem;
     margin-right: .5rem;
@@ -191,10 +173,6 @@
 
     /*========== Media Queries ===Not Used===*/
     .avatar {
-        display: none;
-    }
-
-    .company {
         display: none;
     }
 

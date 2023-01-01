@@ -12,7 +12,6 @@ const MainNavbar = () => {
         <nav className={classes.nav}>
             <div className={classes.nav_container}>
                 <Link exact to='/' className={classes.Logo}><img src={Logo} alt='Logo' className={classes.Logo}></img></Link>
-                <Link exact to='/' className={classes.company}>TellusEd</Link>
                 <Link exact to='/software' className={classes.software}>Software</Link>
                 <Link exact to='/explore'  className={classes.explore}>Explore</Link>
                 <div className={classes.spacer}></div>

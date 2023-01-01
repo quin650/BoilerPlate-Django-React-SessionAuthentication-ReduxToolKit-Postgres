@@ -1,19 +1,12 @@
 /* ----------------------Footer----------------------*/
 /* https: //www.youtube.com/watch?v=YOb67OKw62s i.e. Responsive Footer Design using Html & Css by "The WebShala" */
 
-.Logo {
-    height: 53rem;
-    width: 53rem;
-    justify-content: flex-start;
-    margin-right: .5rem;
-}
-
 .footer {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /*Dark-Mode Difference */
-    background-color: #020307;
+    background-color: var(--black);
     padding: 130px 0;
     width: 60%;
     height: 100vh;

@@ -21,6 +21,9 @@ class CheckAuthenticatedView(APIView):
         except:
             return Response({'error': 'Something went wrong when checking authentication status'})
 
+# When the view is called via the url, it ends up:
+# 1. creating a user via the (from django.contrib.auth.models import User)
+# 2. saving a user profile to (from user_profile.models import UserProfile)
 @method_decorator(csrf_protect, name='dispatch')
 class SignupView(APIView):
     permission_classes = (permissions.AllowAny, )
