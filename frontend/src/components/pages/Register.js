@@ -29,7 +29,7 @@ const Register = ({ register }) => {
     };
 
     if(accountCreated)
-        return <Redirect to='/home' />;
+        return <Redirect to='/login' />;
 
     return (
         <div className={classes.main}>
