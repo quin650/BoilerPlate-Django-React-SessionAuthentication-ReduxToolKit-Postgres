@@ -22,22 +22,22 @@ function App() {
             </header>
             <main>
                 <Switch>
-                    <Route path='/' exact>
-                        <Redirect to='/home' />
+                    <Route exact path="/">
+                        <Redirect to="/home" />
                     </Route>
-                    <Route path='/home' exact>
+                    <Route path="/home" >
                         <Home />
                     </Route>
-                    <Route path="/software" exact>
+                    <Route path="/software" >
                         <Software />
                     </Route>
-                    <Route path="/explore" exact>
+                    <Route path="/explore" >
                         <Explore />
                     </Route>
-                    <Route path="/login" exact>
+                    <Route path="/login" >
                         <Login />
                     </Route>
-                    <Route path="/register" exact>
+                    <Route path="/register" >
                         <Register />
                     </Route>
                 </Switch>

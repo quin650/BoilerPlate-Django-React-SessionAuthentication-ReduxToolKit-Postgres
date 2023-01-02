@@ -4,16 +4,9 @@ import {
 } from '../actions/types';
 
 const initialState = {
-    isAuthenticated: null,
-    username: '',
-    first_name: '',
-    last_name: '',
-    phone: '',
-    city: '',
+    isAuthenticated: null
 };
 
-
-// REDUCER REDUCER REDUCER REDUCER
 export default function(state = initialState, action) {
     const { type, payload } = action;
 

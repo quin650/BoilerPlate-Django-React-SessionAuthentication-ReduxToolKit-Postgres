@@ -11,13 +11,13 @@ const MainNavbar = () => {
     return (
         <nav className={classes.nav}>
             <div className={classes.nav_container}>
-                <Link exact to='/' className={classes.Logo}><img src={Logo} alt='Logo' className={classes.Logo}></img></Link>
-                <Link exact to='/software' className={classes.software}>Software</Link>
-                <Link exact to='/explore'  className={classes.explore}>Explore</Link>
+                <Link to='/' className={classes.Logo}><img src={Logo} alt='Logo' className={classes.Logo}></img></Link>
+                <Link to='/software' className={classes.software}>Software</Link>
+                <Link to='/explore'  className={classes.explore}>Explore</Link>
                 <div className={classes.spacer}></div>
                 <SearchBar />
-                <Link exact to='/login' className={classes.sign_in}>Sign-In</Link>
-                <Link exact to='/register' className={classes.sign_up}>Sign-Up</Link>
+                <Link to='/login' className={classes.sign_in}>Sign-In</Link>
+                <Link to='/register' className={classes.sign_up}>Sign-Up</Link>
                 <NavbarMenu />
                 {auth && <NavbarAvatarMenu />}
             </div>
