@@ -4,28 +4,32 @@
     top: 0;
     z-index: 300;
     height: 4rem;
-    align-items: center;
-    justify-content: center;
     padding-top: .5rem;
     padding-bottom: .5rem;
     width: 100%;
     background-color: rgb(0, 0, 0, .4);
+    justify-content: center;
 }
 
 .nav_container {
     display: flex;
+    flex-direction: row;
     color: var(--white);
     height: 3rem;
-    width: 99%;
-    max-width: 1350px;
     align-items: center;
-    background-color: transparent;
+    padding: 0;
+    width: 80%;
+    max-width: 1740px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
+
 .Logo {
+    display: flex;
+    align-content: flex-start;
     height: 3rem;
     width: 3rem;
-    justify-content: flex-start;
     margin-right: .5rem;
 }
 
@@ -56,9 +60,10 @@
 }
 
 .software {
+    display: flex;
+    align-content: flex-start;
     margin-left: .5rem;
     margin-right: .5rem;
-    justify-content: flex-start;
     text-decoration: none;
     color: var(--white);
 }
@@ -73,9 +78,10 @@
 }
 
 .explore {
+    display: flex;
+    align-content: flex-start;
     margin-left: .5rem;
     margin-right: .5rem;
-    justify-content: flex-start;
     text-decoration: none;
     color: var(--white);
 }
@@ -99,12 +105,14 @@
 }
 
 .sign_in {
+    display: flex;
+    align-content: flex-end;
     margin-left: .5rem;
     margin-right: .5rem;
     min-width: 3.3rem;
-    justify-content: flex-end;
     text-decoration: none;
     color: var(--white);
+
 }
 
 .sign_in:hover {
@@ -121,6 +129,8 @@
 }
 
 .sign_up {
+    display: flex;
+    align-content: flex-end;
     margin-left: .5rem;
     margin-right: .5rem;
     border-radius: 6px;
@@ -134,7 +144,6 @@
     background: rgba(0, 0, 0, 0.04);
     color: white;
     border: .5px solid white;
-    justify-content: flex-end;
     text-decoration: none;
     color: var(--white);
 }
@@ -156,7 +165,7 @@
 @media (max-width: 1011px) {
     .sign_up {
         order: 1;
-        margin: auto auto auto 2rem;
+        margin: 0rem;
         padding-top: .3rem;
         padding-bottom: .3rem;
         padding-left: .55rem;
@@ -164,13 +173,17 @@
         height: 1.76rem;
         width: 4rem;
         min-width: 4rem;
+
     }
 
     .Logo {
+        display: flex;
+        align-content: center;
         order: 2;
         margin: auto;
     }
 
+    
     /*========== Media Queries ===Not Used===*/
     .avatar {
         display: none;

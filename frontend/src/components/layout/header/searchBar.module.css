@@ -1,5 +1,11 @@
-
+.search{
+    display: flex;
+    align-content: flex-end;
+    margin-left: auto;
+}
 .search input {
+    display: flex;
+    align-content: flex-end;
     margin-left: .5rem;
     margin-right: .5rem;
     border-radius: 7px;
@@ -15,7 +21,6 @@
     background-color: rgba(0, 0, 0, 0.04);
     border: .1px solid white;
     outline: 0px solid white;
-    justify-content: flex-end;
 }
 
 .search input:focus {
