@@ -10,17 +10,21 @@
     margin-right: .5rem;
     border-radius: 7px;
     height: 2.2rem;
-    width: 16rem;
+    width: 14rem;
     opacity: .2;
     padding-left: .75rem;
     padding-right: .75rem;
     padding-top: .5rem;
     padding-bottom: .5rem;
     font-size: 14px;
-    opacity: .3;
-    background-color: rgba(0, 0, 0, 0.04);
-    border: .1px solid white;
-    outline: 0px solid white;
+    opacity: .5;
+    background-color: rgb(123, 123, 123);
+    border: .05px solid white;
+}
+
+.search input::placeholder {
+    color: white;
+    opacity: 1;
 }
 
 .search input:focus {

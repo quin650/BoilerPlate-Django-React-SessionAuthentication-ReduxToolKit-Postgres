@@ -104,7 +104,7 @@
     opacity: 1;
 }
 
-.sign_in {
+.sign_in_out {
     display: flex;
     align-content: flex-end;
     margin-left: .5rem;
@@ -115,16 +115,16 @@
 
 }
 
-.sign_in:hover {
+.sign_in_out:hover {
     color: var(--gray);
     cursor: pointer;
 }
 
-.sign_in:active {
+.sign_in_out:active {
     color: black;
 }
 
-.sign_in:hover {
+.sign_in_out:hover {
     cursor: pointer;
 }
 
@@ -159,6 +159,23 @@
     color: black;
 }
 
+.avatarDiv{
+    order: 3;
+    display: flex;
+}
+
+.avatar {
+    order: 3;
+    display: flex;
+    height: 2.2rem;
+    width: 2.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    align-items: center;
+}
+
 /*========== Media Queries ==========*/
 
 /* Devices under 1011px */
@@ -173,22 +190,16 @@
         height: 1.76rem;
         width: 4rem;
         min-width: 4rem;
-
     }
 
     .Logo {
+        order: 2;
         display: flex;
         align-content: center;
-        order: 2;
         margin: auto;
     }
-
     
     /*========== Media Queries ===Not Used===*/
-    .avatar {
-        display: none;
-    }
-
     .software {
         display: none;
     }
@@ -205,7 +216,7 @@
         display: none;
     }
 
-    .sign_in {
+    .sign_in_out {
         display: none;
     }
 

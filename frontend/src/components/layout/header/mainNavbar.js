@@ -3,16 +3,24 @@ import classes from './mainNavbar.module.css';
 import Logo from '../../../../static/images/1Logo.png';
 import NavbarMenu from './navbarMenu';
 import SearchBar from './searchBar';
-import NavbarAvatarMenu from './navbarAvatarMenu';
 import { Link } from 'react-router-dom';
+import defaultPNG from '../../../../static/images/1Avatar.png';
 
 const MainNavbar = () => {
-    const [auth, SetAuth] = useState(false);
+    const [auth, SetAuth] = useState(true);
 
     const guestLinks = (
         <Fragment>
-                <Link to='/login' className={classes.sign_in}>Sign-In</Link>
+                <Link to='/login' className={classes.sign_in_out}>Sign-In</Link>
                 <Link to='/register' className={classes.sign_up}>Sign-Up</Link>
+                <NavbarMenu />
+        </Fragment>
+    )
+
+    const userLinks = (
+        <Fragment>
+                <Link to='/logout' className={classes.sign_in_out}>Log-Out</Link>
+                <div className={classes.avatarDiv}><img src={defaultPNG} className={classes.avatar} alt='Avatar'></img></div>
         </Fragment>
     )
 
@@ -23,9 +31,8 @@ const MainNavbar = () => {
                 <Link to='/software' className={classes.software}>Software</Link>
                 <Link to='/explore'  className={classes.explore}>Explore</Link>
                 <SearchBar />
-                {!auth &&  guestLinks }
-                {auth && <NavbarAvatarMenu />}
-                <NavbarMenu />
+                {!auth && guestLinks}
+                {auth && userLinks}
             </div>
         </nav>
     );
