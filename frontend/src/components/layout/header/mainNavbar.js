@@ -5,22 +5,23 @@ import NavbarMenu from './navbarMenu';
 import SearchBar from './searchBar';
 import { Link } from 'react-router-dom';
 import defaultPNG from '../../../../static/images/1Avatar.png';
+import { connect } from 'react-redux';
+import { logout } from '../../../actions/auth';
 
-const MainNavbar = () => {
-    const [auth, SetAuth] = useState(true);
+const MainNavbar = ({ isAuthenticated, logout }) => {
+    const [auth, SetAuth] = useState(false);
+    const authLinks = (
+        <Fragment>
+                <a onClick={logout} href='#!' className={classes.sign_in_out}>Log-Out</a>
+                <div className={classes.avatarDiv}><img src={defaultPNG} className={classes.avatar} alt='Avatar'></img></div>
+        </Fragment>
+    )
 
     const guestLinks = (
         <Fragment>
                 <Link to='/login' className={classes.sign_in_out}>Sign-In</Link>
                 <Link to='/register' className={classes.sign_up}>Sign-Up</Link>
                 <NavbarMenu />
-        </Fragment>
-    )
-
-    const userLinks = (
-        <Fragment>
-                <Link to='/logout' className={classes.sign_in_out}>Log-Out</Link>
-                <div className={classes.avatarDiv}><img src={defaultPNG} className={classes.avatar} alt='Avatar'></img></div>
         </Fragment>
     )
 
@@ -31,11 +32,14 @@ const MainNavbar = () => {
                 <Link to='/software' className={classes.software}>Software</Link>
                 <Link to='/explore'  className={classes.explore}>Explore</Link>
                 <SearchBar />
-                {!auth && guestLinks}
-                {auth && userLinks}
+                { isAuthenticated ? authLinks : guestLinks }
             </div>
         </nav>
     );
 };
 
-export default MainNavbar;
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { logout })(MainNavbar);

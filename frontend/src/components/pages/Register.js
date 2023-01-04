@@ -1,12 +1,12 @@
 import React , { useState } from "react";
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { register } from "../../actions/auth";
 import classes from './register.module.css';
 import CSRFToken from "../csrftoken";
 
-const Register = ({ register }) => {
-    const [formData, setFormData] = useState({
+const Register = ({ register, isAuthenticated }) => {
+    const [formData, setFormData] = useState({ 
         username:'',
         password:'',
         re_password:''
@@ -28,7 +28,9 @@ const Register = ({ register }) => {
         }
     };
 
-    if(accountCreated)
+    if (isAuthenticated)
+        return <Redirect to='/home' />;
+    else if (accountCreated)
         return <Redirect to='/login' />;
 
     return (
@@ -74,9 +76,16 @@ const Register = ({ register }) => {
                     </div>
                     <button type='submit'>Register</button>
                 </form>
+                <p>
+                    Already have an Account? <Link to='/login'>Log In</Link>
+                </p>
             </div>
         </div>
     );
 };
 
-export default connect(null, { register })(Register);
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+    });
+
+export default connect(mapStateToProps, { register })(Register);
