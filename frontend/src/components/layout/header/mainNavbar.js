@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import classes from './mainNavbar.module.css';
 import Logo from '../../../../static/images/1Logo.png';
 import NavbarMenu from './navbarMenu';
@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../../actions/auth';
 
 const MainNavbar = ({ isAuthenticated, logout }) => {
-    const [auth, SetAuth] = useState(false);
+    // const [auth, SetAuth] = useState(false);
     const authLinks = (
         <Fragment>
                 <a onClick={logout} href='#!' className={classes.sign_in_out}>Log-Out</a>

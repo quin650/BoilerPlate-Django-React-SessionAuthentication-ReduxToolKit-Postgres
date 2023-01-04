@@ -8,7 +8,6 @@ from .serializers import UserSerializer
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect
 from django.utils.decorators import method_decorator
 
-@method_decorator(csrf_protect, name='dispatch')
 class CheckAuthenticatedView(APIView):
     def get(self, request, format=None):
         user = self.request.user
@@ -22,9 +21,6 @@ class CheckAuthenticatedView(APIView):
         except:
             return Response({'error': 'Something went wrong when checking authentication status'})
 
-# When the view is called via the url, it ends up:
-# 1. creating a user via the (from django.contrib.auth.models import User)
-# 2. saving a user profile to (from user_profile.models import UserProfile)
 @method_decorator(csrf_protect, name='dispatch')
 class SignupView(APIView):
     permission_classes = (permissions.AllowAny, )
@@ -69,7 +65,7 @@ class LoginView(APIView):
 
             if user is not None:
                 auth.login(request, user)
-                return Response({ 'success': 'User authenticated', 'username': username })
+                return Response({ 'success': 'User authenticated'})
             else:
                 return Response({ 'error': 'Error Authenticating ' })
         except:
@@ -79,7 +75,7 @@ class LogoutView(APIView):
     def post(self, request, format=None):
         try:
             auth.logout(request)
-            return Response({ 'success': 'Lougout Out'})
+            return Response({ 'success': 'Logout Out'})
         except:
             return Response({ 'error': 'Something went wrong when logging out' })
 

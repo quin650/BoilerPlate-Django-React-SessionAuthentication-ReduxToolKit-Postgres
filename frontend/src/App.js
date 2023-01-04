@@ -7,16 +7,25 @@ import Software from './components/software/Software';
 import Explore from './components/pages/explore/Explore';
 import Register from './components/pages/register';
 import Login from './components/pages/login';
-import { Provider } from 'react-redux';
-import store from './store';
 
-function App() {
+import { connect } from 'react-redux';
+import { checkAuthenticated } from './actions/auth';
+import { load_user } from './actions/profile';
+
+function App({ checkAuthenticated, load_user  }) {
+    // useEffect(() => {
+    //     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    // }, []);
+
     useEffect(() => {
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        checkAuthenticated();
+        load_user();
+        console.log('inside useEffect')
     }, []);
+    console.log('outside useEffect');
 
     return (
-        <Provider store={store}>
+        <Fragment>
             <header>
                 <MainNavbar />
             </header>
@@ -45,8 +54,8 @@ function App() {
             <footer>
                 <Footer />
             </footer>
-        </Provider>
+        </Fragment>
     );
 };
 
-export default App;
+export default connect(null, { checkAuthenticated, load_user })(App);
