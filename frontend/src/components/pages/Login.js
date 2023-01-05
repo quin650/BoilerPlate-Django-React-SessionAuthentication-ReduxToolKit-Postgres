@@ -6,6 +6,7 @@ import classes from './login.module.css';
 import CSRFToken from "../csrftoken";
 
 const Login = ({ login, isAuthenticated }) => {
+
     const [formData, setFormData] = useState({
         username:'',
         password:'',

@@ -7,7 +7,6 @@ import Software from './components/software/Software';
 import Explore from './components/pages/explore/Explore';
 import Register from './components/pages/register';
 import Login from './components/pages/login';
-
 import { connect } from 'react-redux';
 import { checkAuthenticated } from './actions/auth';
 import { load_user } from './actions/profile';
