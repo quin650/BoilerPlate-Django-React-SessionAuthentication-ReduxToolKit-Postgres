@@ -3,16 +3,17 @@ import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { update_profile } from "../../actions/profile";
 import classes from './dashboard.module.css';
-import CSRFToken from "../csrftoken";
+import { delete_account } from "../../actions/auth";
 
 const Dashboard = ({
+    delete_account,
     update_profile,
     first_name_global,
     last_name_global,
     phone_global,
     city_global
 }) => {
-    const [profileUpdated, setProfileUpdated] = useState(false);
+
     const [formData, setFormData] = useState({
         first_name:'',
         last_name:'',
@@ -36,13 +37,7 @@ const Dashboard = ({
 
     const onSubmit = e => {
         e.preventDefault();
-
-        const updateProfile = async () => {
-            await update_profile(first_name, last_name, phone, city);
-            setProfileUpdated(!profileUpdated);
-        };
-
-        updateProfile();
+        update_profile(first_name, last_name, phone, city);
     };
 
     return (
@@ -51,7 +46,6 @@ const Dashboard = ({
                 <h1>Welcome to your User Dashboard</h1>
                 <p>Update your user profile below: </p>
                 <form onSubmit={e => onSubmit(e)}>
-                    <CSRFToken />
                     <div className={classes.input_section}>
                         <label htmlFor="first_name">First Name</label>
                         <input
@@ -96,8 +90,14 @@ const Dashboard = ({
                     <button type='submit'>Update</button>
                 </form>
                 <p>
-                    Want to delete your Profile? <Link to='/login'>Delete</Link>
+                    Click the button below to delete your account:
                 </p>
+                <button 
+                href='#!'
+                onClick={delete_account}
+                >
+                    Delete
+                </button>
             </div>
         </div>
     );
@@ -111,5 +111,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { 
+    delete_account,
     update_profile
 })(Dashboard);

@@ -91,7 +91,7 @@ class DeleteAccountView(APIView):
         user = self.request.user
 
         try:
-            user = User.objects.filter(id = user.id).delete()
+            User.objects.filter(id = user.id).delete()
 
             return Response({ 'success': 'User delete successfully'})
         except:

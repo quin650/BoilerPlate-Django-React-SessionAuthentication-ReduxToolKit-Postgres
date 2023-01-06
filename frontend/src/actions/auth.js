@@ -9,7 +9,9 @@ import {
     LOGOUT_SUCCESS,
     LOGOUT_FAIL,
     AUTHENTICATED_SUCCESS,
-    AUTHENTICATED_FAIL
+    AUTHENTICATED_FAIL,
+    DELETE_USER_SUCCESS,
+    DELETE_USER_FAIL
 } from './types';
 
 export const checkAuthenticated = () => async dispatch => {
@@ -137,6 +139,38 @@ export const logout = () => async dispatch => {
     } catch(err) {
         dispatch({
             type: LOGOUT_FAIL,
+        });
+    }
+};
+
+export const delete_account = () => async dispatch => {
+    const config = {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-CSRFToken': Cookies.get('csrftoken')
+        }
+    };
+
+    const body = JSON.stringify({
+        'withCredentials': true
+    });
+
+    try {
+        const res = await axios.delete(`http://127.0.0.1:8000/accounts/delete`, config, body);
+
+        if (res.data.success) {
+            dispatch({
+                type: DELETE_USER_SUCCESS
+            });
+        } else {
+            dispatch({
+                type: DELETE_USER_FAIL
+            });
+        }
+    } catch (err) {
+        dispatch({
+            type: DELETE_USER_FAIL
         });
     }
 };
