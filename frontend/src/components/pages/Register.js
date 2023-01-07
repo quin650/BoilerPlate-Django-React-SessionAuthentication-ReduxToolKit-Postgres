@@ -39,6 +39,7 @@ const Register = ({ register, isAuthenticated }) => {
                 <h1>Register for an Account</h1>
                 <form onSubmit={e => onSubmit(e)}>
                     <CSRFToken />
+
                     <div className={classes.input_section}>
                     <label>Username: </label>
                     <input
@@ -50,6 +51,7 @@ const Register = ({ register, isAuthenticated }) => {
                         required
                     />
                     </div>
+
                     <div className={classes.input_section}>
                     <label>Password: </label>
                     <input
@@ -62,6 +64,7 @@ const Register = ({ register, isAuthenticated }) => {
                         required
                     />
                     </div>
+
                     <div className={classes.input_section}>
                     <label>Confirm Password: </label>
                     <input
@@ -74,6 +77,7 @@ const Register = ({ register, isAuthenticated }) => {
                         required
                     />
                     </div>
+                    
                     <button type='submit'>Register</button>
                 </form>
                 <p>
