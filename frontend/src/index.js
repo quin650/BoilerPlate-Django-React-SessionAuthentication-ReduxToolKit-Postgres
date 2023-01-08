@@ -6,6 +6,16 @@ import store from './store';
 import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+    if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+    } else {
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    }
+
 root.render(
     <React.StrictMode>
         <Provider store={store}>

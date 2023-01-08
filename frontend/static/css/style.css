@@ -6,13 +6,11 @@
 
 html {
     font-family: 'Noto Sans JP', sans-serif;
-    scroll-snap-type: y mandatory
 }
 
 body {
     margin: 0;
     background-color: var(--black);
-    overscroll-behavior-y: none;
 }
 
 :root {

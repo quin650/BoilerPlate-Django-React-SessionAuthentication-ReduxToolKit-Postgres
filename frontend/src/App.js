@@ -12,16 +12,11 @@ import { checkAuthenticated } from './actions/auth';
 import { load_user } from './actions/profile';
 
 function App({ checkAuthenticated, load_user  }) {
-    // useEffect(() => {
-    //     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-    // }, []);
 
     useEffect(() => {
         checkAuthenticated();
         load_user();
-        console.log('inside useEffect')
     }, []);
-    console.log('outside useEffect');
 
     return (
         <Fragment>

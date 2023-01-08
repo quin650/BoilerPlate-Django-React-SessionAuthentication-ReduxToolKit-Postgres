@@ -5,26 +5,12 @@ import Dashboard from "./dashboard";
 import { connect } from 'react-redux';
 
 const Home = ({isAuthenticated}) => {
-
-    const homepage = (
-        <Fragment>
-            <LandingPage0 />
-            <LandingPage1 />
-        </Fragment>
-    );
+    const homepage = (<Fragment><LandingPage0 /><LandingPage1 /></Fragment>);
+    const dashboard = (<Fragment><Dashboard /></Fragment>);
     
-    const dashboard = (
-        <Fragment>
-            <Dashboard />
-        </Fragment>
-    );
-    
-    return(
-        <Fragment>
-            { !isAuthenticated ? homepage : dashboard }
-        </Fragment>
-    );
+    return(<Fragment>{ !isAuthenticated ? homepage : dashboard }</Fragment>);
 };
+
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 });

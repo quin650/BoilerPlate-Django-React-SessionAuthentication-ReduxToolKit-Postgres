@@ -2,18 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    scroll-snap-align: start;
     margin: 0;
     padding: 0;
-    /*Dark-Mode Difference */
     background-color: var(--black);
     padding: 130px 0;
-    scroll-snap-align: center;
     height: 100vh;
     width: 100vw;
     background-size: cover;
     resize: both;
-    overflow: hidden;
 }
 
 
@@ -69,7 +65,7 @@
 /* Devices under 1550px */
 @media (max-width: 1550px) {
     .main {
-        scroll-snap-align: start;
+        /* scroll-snap-align: start; */
     }
 
     /* makes it for a smoother transition because of caption moving expanding or squishing during window width change*/

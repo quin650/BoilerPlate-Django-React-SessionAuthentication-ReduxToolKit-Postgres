@@ -9,18 +9,22 @@ import { connect } from 'react-redux';
 import { logout } from '../../../actions/auth';
 
 const MainNavbar = ({ isAuthenticated, logout }) => {
-    // const [auth, SetAuth] = useState(false);
+
+    const handleClickScroll = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    };
+    
     const authLinks = (
         <Fragment>
-                <a onClick={logout} href='#!' className={classes.sign_in_out}>Log-Out</a>
+                <a onClick={logout}href='#!' className={classes.sign_in_out}>Log-Out</a>
                 <div className={classes.avatarDiv}><img src={defaultPNG} className={classes.avatar} alt='Avatar'></img></div>
         </Fragment>
     )
 
     const guestLinks = (
         <Fragment>
-                <Link to='/login' className={classes.sign_in_out}>Sign-In</Link>
-                <Link to='/register' className={classes.sign_up}>Sign-Up</Link>
+                <Link to='/login' onClick={handleClickScroll} className={classes.sign_in_out}>Sign-In</Link>
+                <Link to='/register'onClick={handleClickScroll} className={classes.sign_up}>Sign-Up</Link>
                 <NavbarMenu />
         </Fragment>
     )
@@ -28,9 +32,9 @@ const MainNavbar = ({ isAuthenticated, logout }) => {
     return (
         <nav className={classes.nav}>
             <div className={classes.nav_container}>
-                <Link to='/' className={classes.Logo}><img src={Logo} alt='Logo' className={classes.Logo}></img></Link>
-                <Link to='/software' className={classes.software}>Software</Link>
-                <Link to='/explore'  className={classes.explore}>Explore</Link>
+                <Link to="/home" onClick={handleClickScroll} className={classes.Logo}><img src={Logo} alt='Logo' className={classes.Logo}></img></Link>
+                <Link to='/software' onClick={handleClickScroll}className={classes.software}>Software</Link>
+                <Link to='/explore' onClick={handleClickScroll} className={classes.explore}>Explore</Link>
                 <SearchBar />
                 { isAuthenticated ? authLinks : guestLinks }
             </div>

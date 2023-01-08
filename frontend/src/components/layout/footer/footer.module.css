@@ -5,12 +5,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*Dark-Mode Difference */
     background-color: var(--black);
     padding: 130px 0;
     width: 60%;
     height: 100vh;
-    scroll-snap-align: center;
     margin-left: 20%;
     margin-right: 20%;
 }
@@ -44,7 +42,7 @@
 .container2 {
     max-width: 100%;
     margin: auto;
-    overflow: visible;
+    /* overflow: visible; */
     margin-left: 5%;
 }
 

@@ -9,7 +9,7 @@
     padding: 130px 0;
     width: 80%;
     height: 100vh;
-    scroll-snap-align: center;
+    /* scroll-snap-align: center; */
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -27,7 +27,7 @@
 .container2 {
     max-width: 100%;
     margin: auto;
-    overflow: visible;
+    /* overflow: visible; */
     display: flex;
     flex-direction: column;
 }
