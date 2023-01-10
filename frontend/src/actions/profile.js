@@ -35,6 +35,7 @@ export const load_user = () => async dispatch => {
     }
 };
 
+
 export const update_profile = (first_name, last_name, phone, city) => async dispatch => {
     const config = {
         headers: {

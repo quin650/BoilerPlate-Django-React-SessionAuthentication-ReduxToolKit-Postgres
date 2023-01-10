@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import UserProfile
@@ -16,7 +15,7 @@ class GetUserProfileView(APIView):
             return Response({ 'profile': user_profile.data, 'username': str(username) })
         except:
             return Response({ 'error': 'Something went wrong when retrieving profile' })
-
+            
 class UpdateUserProfileView(APIView):
     def put(self, request, format=None):
         try:

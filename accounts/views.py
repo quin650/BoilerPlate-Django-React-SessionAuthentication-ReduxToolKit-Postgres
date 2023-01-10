@@ -11,15 +11,16 @@ from django.utils.decorators import method_decorator
 class CheckAuthenticatedView(APIView):
     def get(self, request, format=None):
         user = self.request.user
+
         try:
             isAuthenticated = user.is_authenticated
 
             if isAuthenticated:
-                return Response({ 'isAuthenticated': 'success' } )
+                return Response({ 'isAuthenticated': 'success' })
             else:
                 return Response({ 'isAuthenticated': 'error' })
         except:
-            return Response({'error': 'Something went wrong when checking authentication status'})
+            return Response({ 'error': 'Something went wrong when checking authentication status' })
 
 @method_decorator(csrf_protect, name='dispatch')
 class SignupView(APIView):

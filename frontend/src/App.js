@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+    import React, { Fragment, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import MainNavbar from './components/layout/header/mainNavbar';
 import Footer from './components/layout/footer/footer';

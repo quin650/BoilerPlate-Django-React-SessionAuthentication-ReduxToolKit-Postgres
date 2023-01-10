@@ -3,7 +3,6 @@ import {
     LOAD_USER_PROFILE_FAIL,
     UPDATE_USER_PROFILE_SUCCESS,
     UPDATE_USER_PROFILE_FAIL
-
 } from '../actions/types';
 
 const initialState = {
