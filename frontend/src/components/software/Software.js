@@ -10,13 +10,13 @@ const Software = () => {
             </aside>
             <div className={classes.middle}>
                 <h1>Software Page</h1>
-                <a id="hello"><a href={"#hello"}>Hello</a></a>
-                <a id="hello"><a href={"#hello"}>Hello</a></a>
-                <a id="hello"><a href={"#hello"}>Hello</a></a>
+                <a id="hello"><div href={"#hello"}>Hello</div></a>
+                <a id="hello"><div href={"#hello"}>Hello</div></a>
+                <a id="hello"><div href={"#hello"}>Hello</div></a>
             </div>
             <aside className={classes.right}>
-                <h1>SideBar</h1>
-                <a>Contents</a>
+                <a>SideBar</a>
+                <a >Contents</a>
                 <a>Contents</a>
                 <a>Contents</a>
             </aside>
