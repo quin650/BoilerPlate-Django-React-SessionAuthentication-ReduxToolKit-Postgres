@@ -1,5 +1,5 @@
 import React , { useState } from "react";
-import { Redirect, Link } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { register } from "../../actions/auth";
 import classes from './register.module.css';
@@ -24,14 +24,13 @@ const Register = ({ register, isAuthenticated }) => {
         if (password === re_password) {
             register(username, password, re_password);
             setAccountCreated(true);
-            console.log('account created')
         }
     };
 
     if (isAuthenticated)
-        return <Redirect to='/home' />;
+        return <Navigate to='/home' />;
     else if (accountCreated)
-        return <Redirect to='/login' />;
+        return <Navigate to='/login' />;
 
     return (
         <div className={classes.main}>

@@ -1,5 +1,5 @@
 import React , { useState } from "react";
-import { Redirect, Link } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from "../../actions/auth";
 import classes from './login.module.css';
@@ -23,7 +23,7 @@ const Login = ({ login, isAuthenticated }) => {
 
 
     if (isAuthenticated)
-        return <Redirect to="/home" />;
+        return <Navigate to="/home" />;
 
     return (
         <div className={classes.main}>

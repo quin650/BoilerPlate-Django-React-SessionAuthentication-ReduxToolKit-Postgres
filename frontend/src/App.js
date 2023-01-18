@@ -1,5 +1,5 @@
     import React, { Fragment, useEffect } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import MainNavbar from './components/layout/header/mainNavbar';
 import Footer from './components/layout/footer/footer';
 import Home from './components/pages/home';
@@ -24,26 +24,14 @@ function App({ checkAuthenticated, load_user  }) {
                 <MainNavbar />
             </header>
             <main>
-                <Switch>
-                    <Route exact path="/">
-                        <Redirect to="/home" />
-                    </Route>
-                    <Route path="/home" >
-                        <Home />
-                    </Route>
-                    <Route path="/software" >
-                        <Software />
-                    </Route>
-                    <Route path="/explore" >
-                        <Explore />
-                    </Route>
-                    <Route path="/login" >
-                        <Login />
-                    </Route>
-                    <Route path="/register" >
-                        <Register />
-                    </Route>
-                </Switch>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/software" element={<Software />} />
+                    <Route path="/explore" element={<Explore />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                </Routes>
             </main>
             <footer>
                 <Footer />
