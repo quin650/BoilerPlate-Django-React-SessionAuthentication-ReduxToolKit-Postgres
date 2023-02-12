@@ -1,16 +1,13 @@
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+import { configureStore } from '@reduxjs/toolkit';
+import userSlice from './reducers/auth';
+import profSlice from './reducers/profile';
 
-const initialState = {};
-
-const middleware = [thunk];
-
-const store = createStore(
-    rootReducer,
-    initialState,
-    composeWithDevTools(applyMiddleware(...middleware))
-);
+export const store = configureStore({
+	reducer: {
+		user: userSlice.reducer,
+		prof: profSlice.reducer
+	},
+	devTools: process.env.NODE_ENV !== 'production',
+});
 
 export default store;

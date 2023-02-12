@@ -1,9 +1,4 @@
-import {
-    LOAD_USER_PROFILE_SUCCESS,
-    LOAD_USER_PROFILE_FAIL,
-    UPDATE_USER_PROFILE_SUCCESS,
-    UPDATE_USER_PROFILE_FAIL
-} from '../actions/types';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     username: '',
@@ -13,34 +8,36 @@ const initialState = {
     city: ''
 };
 
-export default function(state = initialState, action) {
-    const { type, payload } = action;
+const profSlice = createSlice({
+	name: 'prof',
+	initialState,
+	reducers: {
+		loadUserProfileSuccess(state, action) {
+			state.username = action.payload.username;
+            state.first_name = action.payload.profile.first_name;
+            state.last_name = action.payload.profile.last_name;
+            state.phone = action.payload.profile.phone;
+            state.city = action.payload.profile.city;
+		},
+        updateUserProfileSuccess(state, action) {
+			state.username = action.payload.username;
+            state.first_name = action.payload.profile.first_name;
+            state.last_name = action.payload.profile.last_name;
+            state.phone = action.payload.profile.phone;
+            state.city = action.payload.profile.city;
+		},
+        loadUserProfileFail(state) {
+            state.username = '';
+            state.first_name = '';
+            state.last_name = '';
+            state.phone = '';
+            state.city = '';
+		},
+        updateUserProfileFail(state) {
+			state;
+		},
+	},
+});
 
-    switch(type) {
-        case LOAD_USER_PROFILE_SUCCESS:
-        case UPDATE_USER_PROFILE_SUCCESS:
-            return {
-                ...state,
-                username: payload.username,
-                first_name: payload.profile.first_name,
-                last_name: payload.profile.last_name,
-                phone: payload.profile.phone,
-                city: payload.profile.city,
-            }
-        case LOAD_USER_PROFILE_FAIL:
-            return {
-                ...state,
-                username: '',
-                first_name: '',
-                last_name: '',
-                phone: '',
-                city: '',
-            }
-        case UPDATE_USER_PROFILE_FAIL:
-            return {
-                ...state
-            }
-        default:
-            return state
-    };
-};
+export const profActions  = profSlice.actions;
+export default profSlice;

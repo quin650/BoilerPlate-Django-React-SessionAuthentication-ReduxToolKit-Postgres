@@ -2,9 +2,10 @@ import React, { Fragment }  from "react";
 import LandingPage0 from "../layout/body/landingPage0";
 import LandingPage1 from "../layout/body/landingPage1";
 import Dashboard from "./dashboard";
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-const Home = ({isAuthenticated}) => {
+const Home = () => {
+    const { isAuthenticated } = useSelector(state => state.user);
 
     const homepage = (<Fragment><LandingPage0 /><LandingPage1 /></Fragment>);
     const dashboard = (<Fragment><Dashboard /></Fragment>);
@@ -12,8 +13,4 @@ const Home = ({isAuthenticated}) => {
     return(<Fragment>{ !isAuthenticated ? homepage : dashboard }</Fragment>);
 };
 
-const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
-});
-
-export default connect(mapStateToProps)(Home);
+export default Home;

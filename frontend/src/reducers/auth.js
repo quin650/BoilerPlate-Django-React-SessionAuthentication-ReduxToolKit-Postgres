@@ -1,52 +1,51 @@
-import {
-    REGISTER_SUCCESS,
-    REGISTER_FAIL,
-    LOGIN_SUCCESS,
-    LOGIN_FAIL,
-    LOGOUT_SUCCESS,
-    LOGOUT_FAIL,
-    AUTHENTICATED_SUCCESS,
-    AUTHENTICATED_FAIL,
-    DELETE_USER_SUCCESS,
-    DELETE_USER_FAIL
-} from '../actions/types';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    isAuthenticated: null
+	isAuthenticated: false,
+	user: null,
+	loading: false,
+	registered: false,
 };
 
-export default function(state = initialState, action) {
-    const { type, payload } = action;
+const userSlice = createSlice({
+	name: 'user',
+	initialState,
+	reducers: {
+		registerFail(state) {
+			state.registered = false;
+			state.isAuthenticated = false;
+		},
+		registerSuccess(state){
+			state.registered = true;
+			state.isAuthenticated = false;
+		},
+		authSuccess(state){
+			state.isAuthenticated = true;
+		},
+		authFail(state){
+			state.isAuthenticated = false;
+		},
+		loginSuccess(state){
+			state.isAuthenticated = true;
+		},
+		loginFail(state){
+			state.isAuthenticated = false;
+		},
+		logoutSuccess(state){
+			state.isAuthenticated = false;
+			state.registered = false;
+		},
+		logoutFail(state){
+			state;
+		},
+		deleteUserSuccess(state){
+			state.isAuthenticated = false;
+		},
+		deleteUserFail(state){
+			state;
+		},
+	},
+});
 
-    switch(type) {
-        case AUTHENTICATED_SUCCESS:
-        case AUTHENTICATED_FAIL:
-            return {
-                ...state,
-                isAuthenticated: payload
-            }
-        case REGISTER_SUCCESS:
-            return {
-                ...state,
-                isAuthenticated: false
-            }
-        case LOGIN_SUCCESS:
-            return {
-                ...state,
-                isAuthenticated: true
-            }
-        case LOGOUT_SUCCESS:
-        case DELETE_USER_SUCCESS:
-            return {
-                ...state,
-                isAuthenticated: false
-            }
-        case REGISTER_FAIL:
-        case LOGIN_FAIL:
-        case LOGOUT_FAIL:
-        case DELETE_USER_FAIL:
-            return state
-        default:
-            return state
-    };
-};
+export const userActions = userSlice.actions;
+export default userSlice;

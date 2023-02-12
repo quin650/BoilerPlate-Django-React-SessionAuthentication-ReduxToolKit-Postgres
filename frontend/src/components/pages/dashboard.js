@@ -1,19 +1,17 @@
 import React , { useState, useEffect } from "react";
-import { Redirect, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { update_profile } from "../../actions/profile";
-import classes from './dashboard.module.css';
 import { delete_account } from "../../actions/auth";
 
-const Dashboard = ({
-    delete_account,
-    update_profile,
-    first_name_global,
-    last_name_global,
-    phone_global,
-    city_global
-}) => {
+import classes from './dashboard.module.css';
 
+const Dashboard = () => {
+    const first_name_global = useSelector(state => state.prof.first_name);
+    const last_name_global = useSelector(state => state.prof.last_name);
+    const phone_global = useSelector(state => state.prof.phone);
+    const city_global = useSelector(state => state.prof.city);
+
+    const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         first_name:'',
         last_name:'',
@@ -37,8 +35,9 @@ const Dashboard = ({
 
     const onSubmit = e => {
         e.preventDefault();
-        update_profile(first_name, last_name, phone, city);
+        dispatch(update_profile(first_name, last_name, phone, city));
     };
+
 
     return (
         <div className={classes.main}>
@@ -94,7 +93,7 @@ const Dashboard = ({
                 </p>
                 <button 
                 href='#!'
-                onClick={delete_account}
+                onClick={() => dispatch(delete_account())}
                 >
                     Delete
                 </button>
@@ -103,14 +102,4 @@ const Dashboard = ({
     );
 };
 
-const mapStateToProps = state => ({
-    first_name_global: state.profile.first_name,
-    last_name_global: state.profile.last_name,
-    phone_global: state.profile.phone,
-    city_global: state.profile.city,
-});
-
-export default connect(mapStateToProps, { 
-    delete_account,
-    update_profile
-})(Dashboard);
+export default Dashboard;

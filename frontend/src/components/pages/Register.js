@@ -1,11 +1,14 @@
 import React , { useState } from "react";
 import { Navigate, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import { register } from "../../actions/auth";
-import classes from './register.module.css';
+import { useDispatch, useSelector} from "react-redux";
 import CSRFToken from "../csrftoken";
 
-const Register = ({ register, isAuthenticated }) => {
+import classes from './register.module.css';
+
+const Register = () => {
+    const dispatch = useDispatch();
+    const { isAuthenticated } = useSelector(state => state.user);
     const [formData, setFormData] = useState({ 
         username:'',
         password:'',
@@ -22,7 +25,7 @@ const Register = ({ register, isAuthenticated }) => {
         e.preventDefault();
 
         if (password === re_password) {
-            register(username, password, re_password);
+            dispatch(register(username, password, re_password));
             setAccountCreated(true);
         }
     };
@@ -87,8 +90,4 @@ const Register = ({ register, isAuthenticated }) => {
     );
 };
 
-const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
-    });
-
-export default connect(mapStateToProps, { register })(Register);
+export default Register;

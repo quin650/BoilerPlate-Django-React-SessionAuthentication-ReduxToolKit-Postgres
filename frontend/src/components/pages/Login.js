@@ -1,11 +1,14 @@
 import React , { useState } from "react";
 import { Navigate, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { login } from "../../actions/auth";
-import classes from './login.module.css';
 import CSRFToken from "../csrftoken";
 
-const Login = ({ login, isAuthenticated }) => {
+import classes from './login.module.css';
+
+const Login = () => {
+    const { isAuthenticated } = useSelector(state => state.user);
+    const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         username:'',
         password:'',
@@ -18,9 +21,8 @@ const Login = ({ login, isAuthenticated }) => {
     const onSubmit = e => {
         e.preventDefault();
 
-        login(username, password);
+        dispatch(login(username, password));
     };
-
 
     if (isAuthenticated)
         return <Navigate to="/home" />;
@@ -64,8 +66,4 @@ const Login = ({ login, isAuthenticated }) => {
     );
 };
 
-const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
-});
-
-export default connect(mapStateToProps, { login })(Login);
+export default Login;
